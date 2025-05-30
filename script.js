@@ -830,6 +830,7 @@ const quoteContainer = document.getElementById("quote-container");
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const settingsBtn = document.getElementById("settings-btn");
+const switchBtn = document.getElementById("switch-btn");
 const settingsModal = document.getElementById("settings-modal");
 const closeModalBtn = document.querySelector(".close-btn");
 const saveBtn = document.getElementById("save-btn");
@@ -858,6 +859,7 @@ document.addEventListener("DOMContentLoaded", function () {
   quoteContainer.style.color = fontColor;
   document.body.style.color = fontColor;
   settingsBtn.style.color = fontColor;
+  switchBtn.style.color = fontColor;
 
   
 
@@ -894,6 +896,7 @@ function saveSettings() {
   quoteContainer.style.color = fontColor;
   document.body.style.color = fontColor;
   settingsBtn.style.color = fontColor;
+  switchBtn.style.color = fontColor;
 
   // Update the time to reflect the changes immediately
   renderQuote();
@@ -902,7 +905,12 @@ function saveSettings() {
   closeSettingsModal();
 }
 
+function refreshPage() {
+  location.reload();
+}
+
 settingsBtn.addEventListener("click", openSettingsModal);
+switchBtn.addEventListener("click", refreshPage);
 closeModalBtn.addEventListener("click", closeSettingsModal);
 saveBtn.addEventListener("click", saveSettings);
 
